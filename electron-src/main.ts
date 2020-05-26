@@ -8,15 +8,15 @@ const args = process.argv.slice(1),
 
 function createWindow(): BrowserWindow {
 
-  const electronScreen = screen;
-  const size = electronScreen.getPrimaryDisplay().workAreaSize;
+  // const electronScreen = screen;
+  // const size = electronScreen.getPrimaryDisplay().workAreaSize;
 
   // Create the browser window.
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: size.width,
-    height: size.height,
+    width: 980,
+    height: 680,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve) ? true : false,
@@ -28,9 +28,7 @@ function createWindow(): BrowserWindow {
     require('devtron').install();
     win.webContents.openDevTools();
 
-    require('electron-reload')(__dirname, {
-      // electron: require(`${__dirname}/node_modules/electron`)
-    });
+    require('electron-reload')(__dirname);
     win.loadURL('http://localhost:4200');
 
   } else {

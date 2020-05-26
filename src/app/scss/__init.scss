@@ -1,2 +1,14 @@
 $borderColor: #ddd;
 $primaryColor: #42a5f5;
+$baseTextColor: #666;
+// 
+$basePx: 10px;
+
+@mixin clearfix($content: "", $height: 0, $clear: both, $display: block) {
+    &:after {
+        content: $content;
+        height: $height;
+        display: $display;
+        clear: $clear;
+    }
+}

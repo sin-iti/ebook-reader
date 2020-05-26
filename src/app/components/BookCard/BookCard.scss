@@ -1,0 +1,23 @@
+@import "../../scss/_init";
+
+:host {
+    $cardWidth: 156px;
+    width: $cardWidth;
+    display: block;
+
+    .create-time {
+        margin-bottom: 10px;
+    }
+
+    .book-card {
+        width: $cardWidth;
+        height: 218px;
+        margin-bottom: 26px;
+        box-shadow: 0 0 20px 0 #acacac;
+    }
+
+    .book-name {
+        color: #333;
+        word-break: break-all;
+    }
+}

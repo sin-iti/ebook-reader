@@ -1,3 +1,4 @@
+import { BookCardComponent } from './components/BookCard/BookCard';
 import { HomeComponent } from './pages/home/home.component';
 import 'reflect-metadata';
 import '../polyfills';
@@ -25,7 +26,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,

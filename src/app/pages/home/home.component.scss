@@ -10,7 +10,7 @@
 
     .part-left {
         width: 220px;
-        padding: 10px;
+        padding: $basePx;
         border-right: 1px solid $borderColor;
     }
 
@@ -21,5 +21,79 @@
 
     .ak-btn {
         width: 100%;
+        margin-bottom: $basePx;
     }
+
+    .block-part {
+        padding: $basePx 0;
+        border-top: 1px solid $borderColor;
+
+        .block-title {
+            padding-left: $basePx;
+            margin-bottom: $basePx;
+            color: #a9a9a9;
+        }
+    }
+
+    .sort-type-list {
+        .sort-type-item {
+            $activeColor: #e4e4e4;
+            padding: $basePx;
+            transition: 0.6s ease all;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($color: $activeColor, $amount: 8);
+            }
+
+            &.active {
+                background-color: $activeColor;
+            }
+        }
+    }
+
+    .row-operator {
+        padding: $basePx;
+        border-bottom: 1px solid $borderColor;
+        background-color: #efefef;
+
+        @include clearfix();
+    }
+
+    .input-box {
+        margin-right: $basePx * 2;
+
+        input {
+            width: 100%;
+            transition: 0.6s all linear;
+            outline: 0;
+        }
+
+        &.on-focus {
+            width: 200px;
+        }
+    }
+
+    .part-book-list {
+        display: flex;
+        flex-direction: column;
+
+        .list-part {
+            padding: 30px 40px;
+            flex: 1;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(auto-fill, 156px);
+            grid-gap: $basePx;
+        }
+    }
+
+    .book-card-item {
+        margin-right: $basePx;
+        margin-bottom: 30px;
+    }
+
+
 }

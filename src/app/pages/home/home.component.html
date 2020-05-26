@@ -1,4 +1,47 @@
 <div class="part-left">
-    <button class="ak-btn primary">{{ "PAGES.HOME.BTN.ADD" | translate}}</button>
+    <button class="ak-btn primary">{{ "PAGES.HOME.BTN.ADD" | translate }}</button>
+    <div class="block-part-list">
+        <div class="block-part">
+            <div class="block-title">{{ "PAGES.HOME.BOOKSHELF" | translate }}</div>
+            <div class="block-body">
+                <div class="sort-type-list">
+                    <div
+                        class="sort-type-item"
+                        *ngFor="let sortType of sortTypeList"
+                        [class]="{ 'active': actSortType === sortType }"
+                        (click)="updateActSortType(sortType)"
+                    >{{ sortType | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="part-right"></div>
+<div class="part-right part-book-list">
+    <div class="row-operator">
+        <div class="pull-left">{{ "PAGES.HOME.BOOK_ALL" | translate }}</div>
+        <div class="pull-right clearfix">
+            <div
+                class="input-box pull-left"
+                [class]="{'on-focus': focusStateSearch}"
+            >
+                <input
+                    [(ngModel)]="searchRefer"
+                    on-focus="updateFocusState(true)"
+                    on-blur="updateFocusState(false)"
+                    [placeholder]="'PAGES.HOME.SEARCH_PLACEHOLDER' | translate"
+                >
+            </div>
+            <div class="order-type pull-left">
+                <span>{{ "PAGES.HOME.ORDER_TYPE.LABEL" | translate }}</span>
+                <span>{{ actOrderType | translate }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="list-part">
+        <c-book-card
+            class="book-card-item"
+            *ngFor="let bookInfo of bookList"
+            [bookInfo]="bookInfo"
+        ></c-book-card>
+    </div>
+</div>

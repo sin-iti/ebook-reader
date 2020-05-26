@@ -3,6 +3,15 @@
         "HOME": {
             "BTN": {
                 "ADD": "添加图书"
+            },
+            "BOOKSHELF": "书架",
+            "BOOK_ALL": "全部图书",
+            "BOOK_CLASSIFY": "管理分类",
+            "SEARCH_PLACEHOLDER": "输入书名, 进行筛选",
+            "ORDER_TYPE": {
+                "LABEL": "排序方式:",
+                "NEW": "最新",
+                "NAME": "书名"
             }
         },
         "NOT_FOUND": {
