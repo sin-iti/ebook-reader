@@ -1,12 +1,13 @@
 {
   "PAGES": {
-      "HOME": {
-          "TITLE": "App works !",
-          "GO_TO_DETAIL": "Go to Detail"
-      },
-      "DETAIL": {
-        "TITLE": "Detail page !",
-        "BACK_TO_HOME": "Back to Home"
+    "HOME": {
+      "BTN": {
+        "ADD": "add a book"
+      }
+    },
+    "NOT_FOUND": {
+      "TEXT": "page not found",
+      "RETURN": "return to homepage"
     }
   }
 }

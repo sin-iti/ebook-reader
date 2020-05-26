@@ -1,0 +1,25 @@
+@import "../../scss/_init";
+
+
+:host {
+    height: 100vh;
+    border-top: 1px solid $borderColor;
+    display: flex;
+    flex-direction: row;
+    background-color: #efefef;
+
+    .part-left {
+        width: 220px;
+        padding: 10px;
+        border-right: 1px solid $borderColor;
+    }
+
+    .part-right {
+        flex: 1;
+        background-color: #f4f4f4;
+    }
+
+    .ak-btn {
+        width: 100%;
+    }
+}
