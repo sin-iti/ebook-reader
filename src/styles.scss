@@ -76,6 +76,11 @@ body {
 
 }
 
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .pull-left {
   float: left;
 }
@@ -105,7 +110,12 @@ body {
   width: 20px;
   height: 20px;
   display: inline-block;
+  vertical-align: middle;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.disable-select {
+  user-select: none;
 }

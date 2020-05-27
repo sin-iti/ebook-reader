@@ -1,6 +1,6 @@
 @import "../../scss/_init";
 
-:host {
+:host::ng-deep {
     $headerHeight: 40px;
 
     .header-part {
@@ -53,23 +53,115 @@
         }
     }
 
+    .group-op-list {
+        display: flex;
+        align-items: center;
+    }
+
     .item-op {
         position: relative;
+        padding-right: $basePx;
+        margin-right: $basePx;
 
         .img-icon {
             margin-right: $basePx;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .label-value {
+            margin-right: $basePx * 2;
+            display: inline-block;
+            vertical-align: middle;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
 
         &:after {
             content: "";
             width: 1px;
             height: 18px;
-            display: block;
-            background-color: #ddd;
             position: absolute;
             right: 0;
             top: 50%;
             transform: translate(-50%, -50%);
+            display: block;
+            background-color: #ddd;
+        }
+    }
+
+    .label-value {
+        .label {
+            margin-right: $basePx;
+        }
+    }
+
+    .color-circle {
+        @include circle(14px);
+        margin-right: $basePx;
+        border: 1px solid #ddd;
+        cursor: pointer;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .svg-test {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 999;
+        transform: translate(-50%, -50%);
+        background-color: darkcyan;
+    }
+
+    .op-read-mode {
+
+        .c-html-arrow {
+            margin-left: $basePx * 0.5;
+            transform: translateY(4px);
+
+            &.direction-down {
+                transform: translateY(-4px);
+            }
+        }
+
+        &:hover {
+            .rect-bg {
+                fill: $primaryColor;
+            }
+
+            .rect-block-left {
+                animation: AniRectBlockLeft 0.8s ease;
+            }
+
+            .rect-block-right {
+                animation: AniRectBlockRight 0.8s ease;
+            }
+
+            .arrow {
+                border-left-color: $primaryColor;
+                border-top-color: $primaryColor;
+            }
+        }
+    }
+
+    .op-font-size {
+        .value-font-size {
+            margin-right: 10px;
+        }
+
+        .value {
+            .img-icon {
+                vertical-align: bottom;
+            }
         }
     }
 }

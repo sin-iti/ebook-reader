@@ -12,3 +12,14 @@ $basePx: 10px;
         clear: $clear;
     }
 }
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin circle($size) {
+    @include square($size);
+    border-radius: 100%;
+    overflow: hidden;
+}

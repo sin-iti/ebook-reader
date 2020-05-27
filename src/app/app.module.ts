@@ -22,6 +22,8 @@ import { AppComponent } from './app.component';
 import { SvgListComponent } from './components/svg-list/svg-list.component';
 import { SvgLetterComponent } from './components/svg-letter/svg-letter.component';
 import { SvgLayoutComponent } from './components/svg-layout/svg-layout.component';
+import { HtmlArrowComponent } from './components/html-arrow/html-arrow.component';
+import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -37,7 +39,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     SvgWindowComponent,
     SvgListComponent,
     SvgLetterComponent,
-    SvgLayoutComponent
+    SvgLayoutComponent,
+    HtmlArrowComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,

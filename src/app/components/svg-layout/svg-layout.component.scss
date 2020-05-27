@@ -1,1 +1,29 @@
-:host {}
+@import "../../scss/_init";
+
+:host {
+
+    svg {
+        .rect-bg {
+            transition: 0.4s all ease;
+        }
+
+        .rect-block {
+            fill: #fff;
+        }
+
+    }
+
+    &:hover {
+        .rect-bg {
+            fill: $primaryColor;
+        }
+
+        .rect-block-left {
+            animation: AniRectBlockLeft 0.8s ease;
+        }
+
+        .rect-block-right {
+            animation: AniRectBlockRight 0.8s ease;
+        }
+    }
+}

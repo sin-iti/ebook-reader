@@ -1,0 +1,40 @@
+@import "../../scss/_init";
+
+:host {
+    margin-left: 2px;
+    margin-right: 2px;
+    display: inline-block;
+    vertical-align: middle;
+
+
+
+    .arrow {
+        border-width: 6px;
+        border-style: solid;
+        transform: rotate(45deg);
+        transform-origin: center;
+        border-color: transparent;
+        border-left-color: $borderColor;
+        border-top-color: $borderColor;
+        transition: 0.4s all ease;
+
+        &-left {
+            transform: rotate(135deg);
+        }
+
+        &-down {
+            transform: rotate(225deg);
+        }
+
+        &-right {
+            transform: rotate(315deg);
+        }
+    }
+
+    &:hover {
+        .arrow {
+            border-left-color: $primaryColor;
+            border-top-color: $primaryColor;
+        }
+    }
+}

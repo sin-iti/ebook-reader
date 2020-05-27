@@ -7,6 +7,49 @@
                 <c-svg-list class="img-icon clickable"></c-svg-list>
                 <c-svg-letter class="img-icon clickable"></c-svg-letter>
             </div>
+            <div class="item-op">
+                <div
+                    class="clearfix clickable op-read-mode"
+                    (click)="toggleReadModePanel()"
+                >
+                    <c-svg-layout class="img-icon"></c-svg-layout>
+                    <span class="disable-select">阅读模式</span>
+                    <c-html-arrow
+                        class="c-html-arrow"
+                        [arrowDirection]="arrowDirection"
+                        [class]="'direction-' + arrowDirection"
+                    ></c-html-arrow>
+                </div>
+            </div>
+            <div class="item-op">
+                <div class="label-value">
+                    <div class="inline-block label disable-select">配色</div>
+                    <div class="inline-block value">
+                        <div
+                            class="inline-block color-circle"
+                            *ngFor="let color of colorList"
+                            [style.backgroundColor]="color"
+                        ></div>
+                    </div>
+                </div>
+                <div class="label-value op-font-size">
+                    <div class="inline-block label disable-select">字号</div>
+                    <div class="inline-block value">
+                        <c-svg-icon
+                            class="img-icon clickable"
+                            iconType="circle_plus"
+                            (click)="updateFontSize('add')"
+                        ></c-svg-icon>
+                        <span class="value-font-size disable-select">{{ fontSize }}</span>
+                        <c-svg-icon
+                            class="img-icon clickable"
+                            iconType="circle_minus"
+                            [class.disabled]="fontSize <= minFontSize"
+                            (click)="updateFontSize('minus')"
+                        ></c-svg-icon>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="pull-right"></div>
