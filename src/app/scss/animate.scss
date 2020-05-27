@@ -1,0 +1,31 @@
+@import "./_init";
+
+@keyframes moveFromLeft {
+    from {
+        transform: translate(-100%);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+@keyframes moveFromRight {
+    from {
+        transform: translate(100%);
+    }
+
+    to {
+        transform: translate(0);
+    }
+}
+
+@keyframes rotateFromLeft {
+    from {
+        transform: rotate(225deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}

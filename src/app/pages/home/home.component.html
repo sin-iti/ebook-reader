@@ -42,6 +42,7 @@
             class="book-card-item"
             *ngFor="let bookInfo of bookList"
             [bookInfo]="bookInfo"
+            (click)="clickBookCard(bookInfo.id)"
         ></c-book-card>
     </div>
 </div>

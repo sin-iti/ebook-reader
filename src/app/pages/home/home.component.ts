@@ -1,5 +1,6 @@
 import { BookService } from './../../service/book.service';
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
     protected actOrderType: string = this.orderTypeList[0];
     private bookService: BookService;
     private bookList: BookService.BookInfo[] = [];
-    constructor() {
+    constructor(private route: ActivatedRoute, private router: Router) {
         this.bookService = new BookService();
     }
     ngOnInit(): void {
@@ -41,5 +42,9 @@ export class HomeComponent implements OnInit {
         this.bookService.getList().subscribe((list) => {
             this.bookList = list;
         });
+    }
+    clickBookCard() {
+        this.router.navigate([`readBook/` + 12])
+        console.log("click book card");
     }
 }

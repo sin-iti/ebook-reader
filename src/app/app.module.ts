@@ -1,3 +1,5 @@
+import { SvgWindowComponent } from './components/SvgWindow/SvgWindow';
+import { ReadBookComponent } from './pages/readBook/readBook.component';
 import { BookCardComponent } from './components/BookCard/BookCard';
 import { HomeComponent } from './pages/home/home.component';
 import 'reflect-metadata';
@@ -17,6 +19,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
+import { SvgListComponent } from './components/svg-list/svg-list.component';
+import { SvgLetterComponent } from './components/svg-letter/svg-letter.component';
+import { SvgLayoutComponent } from './components/svg-layout/svg-layout.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -27,7 +32,12 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   declarations: [
     AppComponent,
     HomeComponent,
-    BookCardComponent
+    BookCardComponent,
+    ReadBookComponent,
+    SvgWindowComponent,
+    SvgListComponent,
+    SvgLetterComponent,
+    SvgLayoutComponent
   ],
   imports: [
     BrowserModule,

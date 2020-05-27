@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-not-found.component.scss']
 })
 export class PageNotFoundComponent implements OnInit {
-  constructor() { }
-
+  constructor(private router: Router) { }
   ngOnInit(): void {
-    console.log(this);
+  }
+  backHome() {
+    this.router.navigate(["/"]);
   }
 }

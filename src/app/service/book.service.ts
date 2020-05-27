@@ -7,6 +7,7 @@ export namespace BookService {
         createTime: number;
         cover: string;
         name: string;
+        id: number;
     }
 }
 
@@ -26,7 +27,8 @@ export class BookService {
             const item: BookService.BookInfo = {
                 createTime: (Date.now()) - ((Math.floor(Math.random() * 6) + 2) * 24 * 3600 * 1000),
                 name: randWord(randInt(4, 40)),
-                cover: ""
+                cover: "",
+                id: i
             };
             list.push(item);
         }

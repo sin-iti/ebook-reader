@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./app/scss/_init";
+@import "./app/scss/animate";
 
 * {
   box-sizing: border-box;
@@ -15,7 +15,6 @@ body {
   color: $baseTextColor;
 }
 
-/* CAN (MUST) BE REMOVED ! Sample Global style */
 .container {
   height: 100%;
   display: flex;
@@ -25,9 +24,7 @@ body {
 
   background: url(./assets/background.jpg) no-repeat center fixed;
   -webkit-background-size: cover;
-  /* pour anciens Chrome et Safari */
   background-size: cover;
-  /* version standardisée */
 
   .title {
     color: white;
@@ -94,4 +91,21 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #f00;
   color: #f00;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+.img-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }

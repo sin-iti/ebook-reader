@@ -1,0 +1,75 @@
+@import "../../scss/_init";
+
+:host {
+    $headerHeight: 40px;
+
+    .header-part {
+        @include clearfix();
+        width: 100vw;
+        height: $headerHeight;
+        padding: 0 $basePx * 1.5;
+        border-top: 1px solid $borderColor;
+        border-bottom: 1px solid $borderColor;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #fff;
+
+        &>.pull-left,
+        &>.pull-right {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .logo-reader {
+            margin-right: 30px;
+            font-weight: bolder;
+            color: #42a5f5;
+        }
+    }
+
+    .static-part {
+        border-top: 1px solid $borderColor;
+        height: 100vh;
+        display: flex;
+
+        .catalog-part {
+            width: 300px;
+            border-right: 1px solid $borderColor;
+            background-color: #f8f8f8;
+        }
+
+        .content-part {
+            flex: 1;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    .item-op {
+        position: relative;
+
+        .img-icon {
+            margin-right: $basePx;
+        }
+
+        &:after {
+            content: "";
+            width: 1px;
+            height: 18px;
+            display: block;
+            background-color: #ddd;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
