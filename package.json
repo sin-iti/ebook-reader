@@ -2,7 +2,7 @@
   "name": "ebook-reader",
   "version": "1.0.0",
   "description": "Angular 9 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "homepage": "https://github.com/sin-iti/ebook-reader.git",
   "author": {
     "name": "Maxime GRIS",
     "email": "maxime.gris@gmail.com"
@@ -98,5 +98,9 @@
   "dependencies": {
     "@angular/animations": "9.1.9",
     "ng-zorro-antd": "9.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sin-iti/ebook-reader.git"
   }
 }
