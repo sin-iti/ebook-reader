@@ -1,0 +1,45 @@
+@import "../../scss/_init";
+
+:host {
+    .label-input-row {
+        //
+        padding-bottom: $basePx;
+        border-bottom: 1px solid $borderColor;
+        margin-bottom: $basePx;
+        display: flex;
+        align-items: center;
+
+        .label {
+            width: 80px;
+        }
+
+        .input-box {
+            flex: 1;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .input-box {
+            &::ng-deep {
+                .ant-select-single:not(.ant-select-customize-input) {
+                    .ant-select-selector {
+                        border: 0;
+                    }
+
+                    &.ant-select-focused {
+                        .ant-select-selector {
+                            box-shadow: initial;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+}

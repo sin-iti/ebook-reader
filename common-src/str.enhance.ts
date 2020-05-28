@@ -19,3 +19,7 @@ export function randWord(wordLen: number = 4, charList: string[] = defaultCharLi
     }
     return str;
 }
+
+export function toPosixPath(pathname: string) {
+    return pathname.replace(/\\/g, "/");
+}

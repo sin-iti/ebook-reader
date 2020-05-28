@@ -15,6 +15,7 @@
         left: 0;
         z-index: 999;
         background-color: #fff;
+        transition: 0.4s all ease;
 
         &>.pull-left,
         &>.pull-right {
@@ -29,6 +30,10 @@
             font-weight: bolder;
             color: #42a5f5;
         }
+
+        &.hide {
+            top: -60px;
+        }
     }
 
     .static-part {
@@ -39,7 +44,12 @@
         .catalog-part {
             width: 300px;
             border-right: 1px solid $borderColor;
+            transition: 0.4s all ease;
             background-color: #f8f8f8;
+
+            &.hide {
+                width: 0;
+            }
         }
 
         .content-part {
@@ -91,6 +101,12 @@
             transform: translate(-50%, -50%);
             display: block;
             background-color: #ddd;
+        }
+
+        &:last-child {
+            &:after {
+                content: initial;
+            }
         }
     }
 
@@ -163,5 +179,62 @@
                 vertical-align: bottom;
             }
         }
+    }
+
+    .op-more-setting {
+        cursor: pointer;
+
+        .value {
+            margin-left: $basePx;
+        }
+
+        .value,
+        path {
+            transition: 0.4s all ease;
+        }
+
+        &:hover {
+            color: $primaryColor;
+
+            path {
+                fill: $primaryColor;
+            }
+        }
+    }
+
+    .op-icon {
+        margin-left: $basePx;
+    }
+
+    .footer-part {
+        transition: 0.4s all ease;
+
+        &.hide {
+            bottom: -60px;
+        }
+    }
+
+    .header-part-imp {
+        position: fixed;
+        top: -60px;
+        right: $basePx;
+        z-index: 999;
+        transition: 0.4s all ease;
+
+        &.show {
+            top: 10px;
+        }
+    }
+
+    .panel-more-setting {
+        width: 400px;
+        padding: 20px 30px;
+        border: 1px solid $borderColor;
+        position: fixed;
+        top: $headerHeight - 2;
+        left: 540px;
+        z-index: 999;
+        box-shadow: 0 0 20px 0 $borderColor;
+        background-color: #fff;
     }
 }

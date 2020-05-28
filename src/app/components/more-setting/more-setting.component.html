@@ -1,0 +1,42 @@
+<div class="label-input-row">
+    <div class="label">字体:</div>
+    <div class="input-box">
+        <nz-select
+            class="full-width"
+            [(ngModel)]="selectFontValue"
+            (ngModelChange)="updateItem('fontFamily', $event)"
+        >
+            <nz-option
+                *ngFor="let fontName of fontList"
+                [nzValue]="fontName.value"
+                [nzLabel]="fontName.text"
+            ></nz-option>
+        </nz-select>
+    </div>
+</div>
+<div class="label-input-row">
+    <div class="label">字体加粗:</div>
+    <div class="input-box">
+        <nz-switch
+            [(ngModel)]="fontBolder"
+            nzCheckedChildren="加粗"
+            nzUnCheckedChildren="正常"
+            (ngModelChange)="updateItem('bolder', $event)"
+        ></nz-switch>
+    </div>
+</div>
+<div class="label-input-row">
+    <div class="label">行高:</div>
+    <div class="input-box">
+        <nz-input-number
+            class="full-width"
+            [(ngModel)]="lineHeight"
+            [nzPrecision]="1"
+            nzPlaceHolder="toFixed"
+            [nzMin]="1"
+            [nzMax]="5"
+            [nzStep]="0.1"
+            (ngModelChange)="updateItem('lineHeight', $event)"
+        ></nz-input-number>
+    </div>
+</div>

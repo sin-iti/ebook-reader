@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-electron": {
+    "ebook-reader": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,10 +17,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": [],
             "customWebpackConfig": {
@@ -139,7 +145,7 @@
         }
       }
     },
-    "angular-electron-e2e": {
+    "ebook-reader-e2e": {
       "root": "e2e",
       "projectType": "application",
       "architect": {
@@ -158,7 +164,7 @@
       }
     }
   },
-  "defaultProject": "angular-electron",
+  "defaultProject": "ebook-reader",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

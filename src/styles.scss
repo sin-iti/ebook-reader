@@ -99,10 +99,19 @@ body {
 }
 
 .clickable {
+  transition: 0.4s all ease;
   cursor: pointer;
+
+  path {
+    transition: 0.4s all ease;
+  }
 
   &:hover {
     color: $primaryColor;
+
+    path {
+      fill: $primaryColor;
+    }
   }
 }
 
@@ -118,4 +127,10 @@ body {
 
 .disable-select {
   user-select: none;
+}
+
+.anticon {
+  path {
+    fill: #ddd;
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "angular-electron",
-  "version": "7.1.0",
+  "name": "ebook-reader",
+  "version": "1.0.0",
   "description": "Angular 9 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {
@@ -94,5 +94,9 @@
   },
   "engines": {
     "node": ">=10.13.0"
+  },
+  "dependencies": {
+    "@angular/animations": "9.1.9",
+    "ng-zorro-antd": "9.1.2"
   }
 }

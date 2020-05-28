@@ -1,5 +1,16 @@
 <div class="part-left">
-    <button class="ak-btn primary">{{ "PAGES.HOME.BTN.ADD" | translate }}</button>
+    <button class="ak-btn primary btn-add">
+        <c-svg-icon
+            class="icon-plus"
+            iconType="plus"
+        ></c-svg-icon>
+        <span>{{ "PAGES.HOME.BTN.ADD" | translate }}</span>
+        <input
+            class="abs-input"
+            type="file"
+            (change)="addLocalBook($event)"
+        />
+    </button>
     <div class="block-part-list">
         <div class="block-part">
             <div class="block-title">{{ "PAGES.HOME.BOOKSHELF" | translate }}</div>

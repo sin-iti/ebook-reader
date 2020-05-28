@@ -1,8 +1,7 @@
 import { BookService } from './../../service/book.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
-
+import { toPosixPath } from '../../../../common-src/enhance';
 @Component({
     selector: "p-home",
     templateUrl: "./home.component.html",
@@ -46,5 +45,11 @@ export class HomeComponent implements OnInit {
     clickBookCard() {
         this.router.navigate([`readBook/` + 12])
         console.log("click book card");
+    }
+    addLocalBook(evt: any) {
+        if (evt && evt.target && evt.target.files && evt.target.files[0]) {
+            const filePath = evt.target.files[0].path;
+            console.log(toPosixPath(filePath))
+        }
     }
 }

@@ -1,0 +1,32 @@
+<div class="input-part">
+    <i
+        nz-icon
+        nzType="step-backward"
+        nzTheme="outline"
+    ></i>
+    <span class="input-box">
+        <input
+            class="input-page-set"
+            [(ngModel)]="nowPage"
+            (ngModelChange)="nowPageModelUpdated($event)"
+        >
+        <span class="sep">/</span>
+        <span class="total-page">{{ totalPage }}</span>
+    </span>
+    <i
+        nz-icon
+        nzType="step-forward"
+        nzTheme="outline"
+    ></i>
+</div>
+<div class="slider-part">
+    <div class="slider-box">
+        <nz-slider
+            [nzMin]="0"
+            [nzMax]="100"
+            [(ngModel)]="percent"
+            (ngModelChange)="percentUpdated($event)"
+        ></nz-slider>
+    </div>
+    <span class="slider-percent">{{percent}}%</span>
+</div>

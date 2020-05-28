@@ -24,7 +24,14 @@ import { SvgLetterComponent } from './components/svg-letter/svg-letter.component
 import { SvgLayoutComponent } from './components/svg-layout/svg-layout.component';
 import { HtmlArrowComponent } from './components/html-arrow/html-arrow.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
-
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { ReadFooterComponent } from './components/read-footer/read-footer.component';
+import { MoreSettingComponent } from './components/more-setting/more-setting.component';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,9 +48,17 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     SvgLetterComponent,
     SvgLayoutComponent,
     HtmlArrowComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    ReadFooterComponent,
+    MoreSettingComponent
   ],
   imports: [
+    NzInputNumberModule,
+    NzSwitchModule,
+    NzSelectModule,
+    NzSliderModule,
+    NzIconModule,
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,

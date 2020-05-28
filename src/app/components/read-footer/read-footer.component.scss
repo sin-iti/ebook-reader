@@ -1,0 +1,76 @@
+@import "../../scss/_init";
+
+:host {
+
+    @include clearfix();
+    //
+    width: 100vw;
+    height: 40px;
+    padding: 0 $basePx * 2;
+    border-top: 1px solid $borderColor;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+
+    .input-part,
+    .slider-part {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        float: left;
+    }
+
+    .input-part {
+        padding-right: $basePx;
+        position: relative;
+
+        .input-box {
+            margin-left: $basePx;
+            margin-right: $basePx;
+        }
+
+        .input-page-set {
+            $inputHeight: 20px;
+            width: 30px;
+            height: $inputHeight;
+            border: 1px solid $borderColor;
+            margin-right: $basePx * 0.5;
+            outline: 0;
+            line-height: $inputHeight;
+
+            &:focus {
+                border-color: $primaryColor;
+            }
+        }
+
+        &:after {
+            content: "";
+            width: 1px;
+            height: 18px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            background-color: $borderColor;
+        }
+    }
+
+    .slider-part {
+        width: calc(100% - 122px);
+        padding-left: $basePx;
+
+        .slider-box {
+            flex: 1;
+        }
+
+        .slider-percent {
+            width: 40px;
+            text-align: right;
+        }
+    }
+}

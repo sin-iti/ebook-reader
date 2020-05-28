@@ -1,10 +1,16 @@
-<div class="header-part">
+<div
+    class="header-part"
+    [class]="hideOpRow ? 'hide' : ''"
+>
     <div class="pull-left">
         <div class="logo-reader">Ebook Reader</div>
         <div class="group-op-list">
             <div class="item-op">
                 <c-svg-window class="img-icon clickable"></c-svg-window>
-                <c-svg-list class="img-icon clickable"></c-svg-list>
+                <c-svg-list
+                    (click)="toggleMenuHide()"
+                    class="img-icon clickable"
+                ></c-svg-list>
                 <c-svg-letter class="img-icon clickable"></c-svg-letter>
             </div>
             <div class="item-op">
@@ -29,6 +35,7 @@
                             class="inline-block color-circle"
                             *ngFor="let color of colorList"
                             [style.backgroundColor]="color"
+                            (click)="updateReadColor(color)"
                         ></div>
                     </div>
                 </div>
@@ -50,12 +57,86 @@
                     </div>
                 </div>
             </div>
+            <div class="item-op">
+                <div
+                    class="label-value op-more-setting"
+                    (click)="togglePanelMoreSetting()"
+                >
+                    <i
+                        nz-icon
+                        nzType="setting"
+                        nzTheme="fill"
+                    ></i>
+                    <span class="value disable-select">更多设置</span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="pull-right"></div>
-</div>
-<div class="static-part">
-    <div class="catalog-part"></div>
-    <div class="content-part">
+    <div class="pull-right">
+        <div class="clickable op-icon">
+            <i
+                nz-icon
+                nzType="search"
+                nzTheme="outline"
+            ></i>
+        </div>
+        <div
+            class="clickable op-icon"
+            (click)="toggleFullScreen()"
+        >
+            <i
+                nz-icon
+                [nzType]="fullscreenIcon"
+                nzTheme="outline"
+            ></i>
+        </div>
+        <div
+            class="clickable op-icon"
+            (click)="toggleHide()"
+        >
+            <i
+                nz-icon
+                nzType="down"
+                nzTheme="outline"
+            ></i>
+        </div>
     </div>
 </div>
+<div
+    class="header-part-imp"
+    [class]="hideOpRow ? 'show' : ''"
+>
+    <div
+        class="clickable op-icon"
+        (click)="toggleHide()"
+    >
+        <i
+            nz-icon
+            nzType="up"
+            nzTheme="outline"
+        ></i>
+    </div>
+</div>
+<div class="static-part">
+    <div
+        class="catalog-part"
+        [class]="hideMenu ? 'hide' : ''"
+    ></div>
+    <div
+        class="content-part"
+        [style.backgroundColor]="color"
+    >
+    </div>
+</div>
+<c-read-footer
+    class="footer-part"
+    [class]="hideOpRow ? 'hide' : ''"
+    [nowPage]="pageNo"
+    [totalPage]="pageTotal"
+    (updatePage)="pageNoUpdate($event)"
+></c-read-footer>
+<c-more-setting
+    class="panel-more-setting"
+    (updateReader)="updateReader($event)"
+    *ngIf="showPanelMoreSetting"
+></c-more-setting>
